@@ -1,2 +1,1 @@
-# fileUP
-Simple (we will see) file uploader
+# Backend Challenges boilerplate - package.json
