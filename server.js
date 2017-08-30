@@ -10,7 +10,7 @@ var express = require('express');
 var app = express();
 
 var multer = require('multer');
-var upload = multer({ dest: 'uploads/' })
+var upload = multer({ dest: 'uploads/' })    //not really sure what this does think this is where it saves it?
 
 var http = require('http');
 
