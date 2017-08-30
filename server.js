@@ -9,6 +9,12 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
+var multer = require('multer');
+var upload = multer({ dest: 'uploads/' })
+
+var http = require('http');
+
+
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
     var allowedOrigins = ['https://narrow-plane.gomix.me', 'https://www.freecodecamp.com'];
@@ -37,6 +43,12 @@ app.route('/')
     .get(function(req, res) {
 		  res.sendFile(process.cwd() + '/views/index.html');
     })
+
+app.post('/public/uploads', upload.single('userfile'), function (req, res, next) { // "/"is the form action, destination "userfile" is the name of the field
+  var results = {size : req.file.size}  // make it a lovely object
+  res.send(results);
+})
+
 
 // Respond not found to all the wrong routes
 app.use(function(req, res, next){
