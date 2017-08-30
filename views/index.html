@@ -10,8 +10,10 @@
 
    <body>
       <div class="container">
-         <h1>Manage Node.js projects and npm packages using package.json</h1>
-         <h3>Part 1 of Free Code Camp Backend Challenges</h3>
+	 <form action="public/uploads" enctype="multipart/form-data" method="post">  <!-- action is where its being sent for routing-->
+		<input type="file" id="userfile" name="userfile" />
+		<input type="submit" value="Upload File" name="submit">
+	</form>
       </div>
    </body>
 
